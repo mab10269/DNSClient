@@ -32,10 +32,8 @@ def local_external_DNS_output(question_type):
     for domain_name in domainList:
         ip_address = query_local_dns_server(domain_name,question_type)
         print(f"The IP address of {domain_name} is {ip_address}")
-
-
-    print("\nPublic DNS Server")
-
+        print("\nPublic DNS Server")
+    
     for domain_name in domainList:
         ip_address = query_dns_server(domain_name,question_type)
         print(f"The IP address of {domain_name} is {ip_address}")
@@ -48,7 +46,7 @@ def exfiltrate_info(domain,question_type):
         
 if __name__ == '__main__':
     
-        question_type = 'A'
+    question_type = 'A'
     
     result = compare_dns_servers(domainList,question_type)
     result = query_local_dns_server('nyu.edu.',question_type)
